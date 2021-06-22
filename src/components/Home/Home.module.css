@@ -1,0 +1,16 @@
+.home {
+  width: 100%;
+  display: flex;
+}
+
+.home__left {
+  width: 20%;
+  height: 300px;
+  border: 1px solid black;
+}
+
+.home__right {
+  width: 80%;
+  height: 300px;
+  border: 1px solid black;
+}
