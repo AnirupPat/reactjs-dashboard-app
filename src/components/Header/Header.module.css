@@ -1,6 +1,38 @@
 .header {
+  display: flex;
+  align-items: center;
   height: 60px;
   width: 100%;
   position: sticky;
   top: 0;
+  z-index: 100;
+  background-color: #131921;
+}
+
+.header__leftSection {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.header__rightSection {
+  width: 80%;
+  justify-content: center;
+}
+
+.header__rightSection h2 {
+  color: white;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.mainLogo {
+  color: white;
+  font-size: 25px;
+  font-family: cursive;
+}
+
+.tagText {
+  color: white;
+  font-size: 10px;
+  margin-bottom: 5px;
 }
