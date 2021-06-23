@@ -25,6 +25,7 @@
   width: 25% !important;
   height: 40px !important;
   padding-top: 10px;
+  cursor: pointer;
 }
 
 .header__rightSection {

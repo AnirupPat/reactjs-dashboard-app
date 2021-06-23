@@ -15,3 +15,7 @@
   height: 600px;
   border: 1px solid black;
 }
+
+.home__right__full {
+  width: 100% !important;
+}
