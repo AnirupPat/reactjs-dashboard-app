@@ -1,13 +1,14 @@
 import React from "react";
 import classes from "./Header.module.css";
 import HorizontalSplitIcon from "@material-ui/icons/HorizontalSplit";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Header = () => {
   const dispatch = useDispatch();
+  let sideNavVisible = useSelector((state) => state);
 
   const iconHandler = () => {
-    dispatch({ type: "visible" });
+    dispatch({ type: "visible", value: !sideNavVisible.visible });
   };
   return (
     <div className={classes.header}>

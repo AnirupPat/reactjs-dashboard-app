@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Button, TextField, InputAdornment } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import { Slider, Rail, Handles, Tracks, Ticks } from "react-compound-slider";
 import { MuiRail, MuiHandle, MuiTrack, MuiTick } from "./components";
 import BarChart from "./BarChart";

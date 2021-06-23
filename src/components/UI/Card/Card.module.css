@@ -1,0 +1,15 @@
+.card {
+  width: 500px;
+  height: 300px;
+  margin-top: 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+}
+
+.card__expand {
+  width: 100% !important;
+  height: 100vh !important;
+  margin-top: 10px;
+  border: 2px solid white;
+  border-radius: 10px;
+}
