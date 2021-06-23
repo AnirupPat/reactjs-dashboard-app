@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classes from "./Home.module.css";
 import SideNav from "../SideNav/SideNav";
 import { useSelector } from "react-redux";
-import RangeSlider from "../Charts/RangeSlider";
+import RangeSlider from "../Charts/BarChart/RangeSlider";
 import Card from "../UI/Card/Card";
 import SettingsOverscanIcon from "@material-ui/icons/SettingsOverscan";
 import { useDispatch } from "react-redux";
