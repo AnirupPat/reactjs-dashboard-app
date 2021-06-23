@@ -7,6 +7,7 @@ import Card from "../UI/Card/Card";
 import SettingsOverscanIcon from "@material-ui/icons/SettingsOverscan";
 import { useDispatch } from "react-redux";
 import { prices, prices2 } from "./ChartData";
+import DoughnutChart from "../Charts/Doughnut/Doughnut";
 
 const Home = () => {
   const [barChartExpandProp, setBarChartExpandProp] = useState(false);
@@ -46,6 +47,17 @@ const Home = () => {
           </div>
           <RangeSlider data={prices} />
         </Card>
+
+        <Card>
+          <div className={classes.home__card__div}>
+            <SettingsOverscanIcon
+              onClick={barChartExpandHandler}
+              className={classes.home__expandIcon}
+            />
+          </div>
+          <DoughnutChart />
+        </Card>
+
         <Card>
           <div className={classes.home__card__div}>
             <SettingsOverscanIcon className={classes.home__expandIcon} />
