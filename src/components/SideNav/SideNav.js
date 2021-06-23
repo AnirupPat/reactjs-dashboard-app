@@ -3,7 +3,7 @@ import NavigationList from "../NavigationList/NavigationList";
 
 import React from "react";
 const SAP_FIORI = "SAP FIORI";
-const SAP_IA = "SAP IA";
+const SAP_IA = "INTELLIGENT AUTOMATION";
 const SideNav = () => {
   return (
     <div className={classes.sidenav}>

@@ -11,8 +11,20 @@
 
 .header__leftSection {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 20%;
+}
+
+.header__companyTag {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__icon {
+  color: white;
+  width: 25% !important;
+  height: 40px !important;
+  padding-top: 10px;
 }
 
 .header__rightSection {
