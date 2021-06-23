@@ -11,6 +11,8 @@ import DoughnutChart from "../Charts/Doughnut/Doughnut";
 
 const Home = () => {
   const [barChartExpandProp, setBarChartExpandProp] = useState(false);
+  const [doughnutChartExpandProp, setDoughnutChartExpandProp] = useState(false);
+
   const dispatch = useDispatch();
   const sideNavVisible = useSelector((state) => state);
   let rightSectionClasses;
@@ -33,6 +35,16 @@ const Home = () => {
       dispatch({ type: "visible", value: !sideNavVisible.visible });
     }
   };
+
+  const doughnutChartExpandHandler = (event) => {
+    event.preventDefault();
+    rightSectionClasses = `${classes.home__right__full}`;
+    setDoughnutChartExpandProp((prevProp) => !prevProp);
+    if (sideNavVisible.visible) {
+      dispatch({ type: "visible", value: !sideNavVisible.visible });
+    }
+  };
+
   return (
     <div className={classes.home}>
       {sideNavVisible.visible && leftSection}
@@ -48,10 +60,10 @@ const Home = () => {
           <RangeSlider data={prices} />
         </Card>
 
-        <Card>
+        <Card expandProp={doughnutChartExpandProp}>
           <div className={classes.home__card__div}>
             <SettingsOverscanIcon
-              onClick={barChartExpandHandler}
+              onClick={doughnutChartExpandHandler}
               className={classes.home__expandIcon}
             />
           </div>
