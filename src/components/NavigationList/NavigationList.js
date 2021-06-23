@@ -10,7 +10,7 @@ const NavigationList = ({ projectTag, params }) => {
   const control =
     params !== undefined &&
     params.map((param) => (
-      <li onClick={fetchDetailsHandler}>
+      <li onClick={fetchDetailsHandler} key={param}>
         {param === "Revenues" && <AttachMoneyIcon className={classes.icon} />}
         {param === "Stories" && <TimelineIcon className={classes.icon} />}
 
@@ -22,7 +22,6 @@ const NavigationList = ({ projectTag, params }) => {
       <div className={classes.navigationList__title}>
         <span>{projectTag}</span>
       </div>
-
       <ul>{control}</ul>
       <hr />
     </div>
