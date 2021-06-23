@@ -21,11 +21,11 @@ class RangeSlider extends React.Component {
 
   render() {
     const { domain, values, update, inputValues } = this.state;
-
+    // style={{ margin: "10%", height: 120, width: "80%" }}
     return (
       <Grid container>
         <Grid item xs={12}>
-          <div style={{ margin: "10%", height: 120, width: "80%" }}>
+          <div>
             <BarChart
               data={this.props.data}
               highlight={update}
