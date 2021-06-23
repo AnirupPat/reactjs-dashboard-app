@@ -1,7 +1,7 @@
 import React from "react";
 import classes from "./Home.module.css";
 import SideNav from "../SideNav/SideNav";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 const Home = () => {
   const sideNavVisible = useSelector((state) => state);

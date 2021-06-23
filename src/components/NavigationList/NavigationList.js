@@ -4,10 +4,13 @@ import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import TimelineIcon from "@material-ui/icons/Timeline";
 
 const NavigationList = ({ projectTag, params }) => {
+  const fetchDetailsHandler = (event) => {
+    console.log(event);
+  };
   const control =
     params !== undefined &&
     params.map((param) => (
-      <li>
+      <li onClick={fetchDetailsHandler}>
         {param === "Revenues" && <AttachMoneyIcon className={classes.icon} />}
         {param === "Stories" && <TimelineIcon className={classes.icon} />}
 

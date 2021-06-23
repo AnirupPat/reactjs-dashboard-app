@@ -49,3 +49,15 @@
   font-size: 10px;
   margin-bottom: 5px;
 }
+
+@media (max-width: 500px) {
+  .header__leftSection {
+    width: 50% !important;
+  }
+  .header__rightSection h2 {
+    font-size: 12px !important;
+  }
+  .mainLogo {
+    font-size: 20px !important;
+  }
+}

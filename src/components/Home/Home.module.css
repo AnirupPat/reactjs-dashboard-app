@@ -1,18 +1,26 @@
 .home {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .home__left {
   width: 20%;
-  height: 600px;
+  height: 100vh;
   border: 1px solid black;
   background: lightslategrey;
+  box-shadow: 5px 10px 8px 10px #888888;
+}
+
+@media (max-width: 500px) {
+  .home__left {
+    width: 100% !important;
+  }
 }
 
 .home__right {
   width: 80%;
-  height: 600px;
+  height: 100vh;
   border: 1px solid black;
 }
 
