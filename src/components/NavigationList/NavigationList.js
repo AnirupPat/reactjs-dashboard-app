@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./NavigationList.module.css";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import TimelineIcon from "@material-ui/icons/Timeline";
+import CloudIcon from "@material-ui/icons/Cloud";
 import { useDispatch } from "react-redux";
 
 const NavigationList = ({ projectTag, params }) => {
@@ -21,6 +22,7 @@ const NavigationList = ({ projectTag, params }) => {
       <li onClick={fetchDetailsHandler} key={param}>
         {param === "Revenues" && <AttachMoneyIcon className={classes.icon} />}
         {param === "Stories" && <TimelineIcon className={classes.icon} />}
+        {param === "Innovations" && <CloudIcon className={classes.icon} />}
 
         <div>{param}</div>
       </li>

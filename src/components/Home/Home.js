@@ -12,6 +12,7 @@ import { CardContent, Typography, Grid } from "@material-ui/core";
 import NumberCard from "../UI/NumberCard/NumberCard";
 import LineChartData from "../../utils/LineChartData";
 import { useDispatch, useSelector } from "react-redux";
+import InnovationKPIData from "../../utils/InnovationKPIData";
 
 const Home = () => {
   const [barChartExpandProp, setBarChartExpandProp] = useState(false);
@@ -99,105 +100,32 @@ const Home = () => {
       {state.visible && leftSection}
 
       <div className={rightSectionClasses}>
-        <NumberCard>
-          <div>
-            <span className={classes.home__numberCard__title}>
-              First Quater
-            </span>
-          </div>
-          <Typography
-            variant="h5"
-            component="h2"
-            className={classes.home__numberCard__number}
-          >
-            <CountUp
-              style={{ color: "white" }}
-              start={0}
-              end={11512927}
-              duration={2.75}
-              separator=","
+        {InnovationKPIData.map((data) => (
+          <NumberCard>
+            <div>
+              <span className={classes.home__numberCard__title}>
+                {data.title}
+              </span>
+            </div>
+            <Typography
+              variant="h5"
+              component="h2"
+              className={classes.home__numberCard__number}
+            >
+              <CountUp
+                style={{ color: "white" }}
+                start={0}
+                end={data.number}
+                duration={2.75}
+                separator=","
+              />
+            </Typography>
+            <LineChart
+              style={{ width: "200px", height: "100px" }}
+              data={firstQuaterData}
             />
-          </Typography>
-          <LineChart
-            style={{ width: "200px", height: "100px" }}
-            data={firstQuaterData}
-          />
-        </NumberCard>
-
-        <NumberCard>
-          <div>
-            <span className={classes.home__numberCard__title}>
-              Second Quater
-            </span>
-          </div>
-          <Typography
-            variant="h5"
-            component="h2"
-            className={classes.home__numberCard__number}
-          >
-            <CountUp
-              style={{ color: "white" }}
-              start={0}
-              end={15678345}
-              duration={2.75}
-              separator=","
-            />
-          </Typography>
-          <LineChart
-            style={{ width: "200px", height: "100px" }}
-            data={firstQuaterData}
-          />
-        </NumberCard>
-
-        <NumberCard>
-          <div>
-            <span className={classes.home__numberCard__title}>
-              Third Quater
-            </span>
-          </div>
-          <Typography
-            variant="h5"
-            component="h2"
-            className={classes.home__numberCard__number}
-          >
-            <CountUp
-              style={{ color: "white" }}
-              start={0}
-              end={5638452}
-              duration={2.75}
-              separator=","
-            />
-          </Typography>
-          <LineChart
-            style={{ width: "200px", height: "100px" }}
-            data={firstQuaterData}
-          />
-        </NumberCard>
-
-        <NumberCard>
-          <div>
-            <span className={classes.home__numberCard__title}>
-              Forth Quater
-            </span>
-          </div>
-          <Typography
-            variant="h5"
-            component="h2"
-            className={classes.home__numberCard__number}
-          >
-            <CountUp
-              style={{ color: "white" }}
-              start={0}
-              end={33442956}
-              duration={2.75}
-              separator=","
-            />
-          </Typography>
-          <LineChart
-            style={{ width: "200px", height: "100px" }}
-            data={firstQuaterData}
-          />
-        </NumberCard>
+          </NumberCard>
+        ))}
 
         <Card expandProp={barChartExpandProp}>
           <div className={classes.home__card__div}>

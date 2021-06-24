@@ -34,6 +34,11 @@
   color: black;
 }
 
+.navigationList ul li:active {
+  background-color: white;
+  color: black;
+}
+
 .icon {
   height: 20px !important;
   /* width: 20px !important; */
