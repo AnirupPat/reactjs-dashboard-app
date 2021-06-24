@@ -2,10 +2,18 @@ import React from "react";
 import classes from "./NavigationList.module.css";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import TimelineIcon from "@material-ui/icons/Timeline";
+import { useDispatch } from "react-redux";
 
 const NavigationList = ({ projectTag, params }) => {
+  const dispatch = useDispatch();
   const fetchDetailsHandler = (event) => {
-    console.log(event);
+    dispatch({
+      type: "selectedKPI",
+      value: {
+        heading: projectTag,
+        subHeading: event.target.innerText,
+      },
+    });
   };
   const control =
     params !== undefined &&

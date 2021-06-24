@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Home.module.css";
 import SideNav from "../SideNav/SideNav";
-import { useSelector } from "react-redux";
 import RangeSlider from "../Charts/BarChart/RangeSlider";
 import Card from "../UI/Card/Card";
 import SettingsOverscanIcon from "@material-ui/icons/SettingsOverscan";
-import { useDispatch } from "react-redux";
 import { prices, prices2 } from "../../utils/ChartData";
 import DoughnutChart from "../Charts/Doughnut/Doughnut";
 import LineChart from "../Charts/LineChart/LineChart";
@@ -13,6 +11,7 @@ import CountUp from "react-countup";
 import { CardContent, Typography, Grid } from "@material-ui/core";
 import NumberCard from "../UI/NumberCard/NumberCard";
 import LineChartData from "../../utils/LineChartData";
+import { useDispatch, useSelector } from "react-redux";
 
 const Home = () => {
   const [barChartExpandProp, setBarChartExpandProp] = useState(false);
@@ -20,16 +19,17 @@ const Home = () => {
   const [lineChartExpandProp, setLineChartExpandProp] = useState(false);
 
   const dispatch = useDispatch();
-  const sideNavVisible = useSelector((state) => state);
+  const state = useSelector((state) => state);
+  console.log(state.selectedKPI);
   useEffect(() => {
-    if (sideNavVisible.visible) {
+    if (state.visible) {
       setBarChartExpandProp(false);
       setDoughnutChartExpandProp(false);
       setLineChartExpandProp(false);
     }
-  }, [sideNavVisible.visible]);
+  }, [state.visible]);
   let rightSectionClasses;
-  if (sideNavVisible.visible) {
+  if (state.visible) {
     rightSectionClasses = `${classes.home__right}`;
   } else {
     rightSectionClasses = `${classes.home__right__full}`;
@@ -44,8 +44,8 @@ const Home = () => {
     event.preventDefault();
     rightSectionClasses = `${classes.home__right__full}`;
     setBarChartExpandProp((prevProp) => !prevProp);
-    if (sideNavVisible.visible) {
-      dispatch({ type: "visible", value: !sideNavVisible.visible });
+    if (state.visible) {
+      dispatch({ type: "visible", value: !state.visible });
     }
   };
 
@@ -53,8 +53,8 @@ const Home = () => {
     event.preventDefault();
     rightSectionClasses = `${classes.home__right__full}`;
     setDoughnutChartExpandProp((prevProp) => !prevProp);
-    if (sideNavVisible.visible) {
-      dispatch({ type: "visible", value: !sideNavVisible.visible });
+    if (state.visible) {
+      dispatch({ type: "visible", value: !state.visible });
     }
   };
 
@@ -62,8 +62,8 @@ const Home = () => {
     event.preventDefault();
     rightSectionClasses = `${classes.home__right__full}`;
     setLineChartExpandProp((prevProp) => !prevProp);
-    if (sideNavVisible.visible) {
-      dispatch({ type: "visible", value: !sideNavVisible.visible });
+    if (state.visible) {
+      dispatch({ type: "visible", value: !state.visible });
     }
   };
 
@@ -96,7 +96,7 @@ const Home = () => {
 
   return (
     <div className={classes.home}>
-      {sideNavVisible.visible && leftSection}
+      {state.visible && leftSection}
 
       <div className={rightSectionClasses}>
         <NumberCard>
