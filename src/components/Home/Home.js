@@ -7,7 +7,7 @@ import ChartBox from "../Charts/ChartBox/ChartBox";
 
 const Home = () => {
   const state = useSelector((state) => state);
-
+  console.log(state);
   let rightSectionClasses;
   if (state.visible) {
     rightSectionClasses = `${classes.home__right}`;
@@ -19,13 +19,20 @@ const Home = () => {
       <SideNav />
     </div>
   );
+  let dashboardData = "";
+  if (
+    state.selectedKPI.heading === "EXTRAS" &&
+    state.selectedKPI.subHeading === "Innovations"
+  ) {
+    dashboardData = InnovationKPIData;
+  }
 
   return (
     <div className={classes.home}>
       {state.visible && leftSection}
 
       <div className={rightSectionClasses}>
-        <ChartBox data={InnovationKPIData} />
+        {dashboardData && <ChartBox data={dashboardData} />}
       </div>
     </div>
   );
