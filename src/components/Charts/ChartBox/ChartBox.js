@@ -25,16 +25,9 @@ const ChartBox = (props) => {
       setLineChartExpandProp(false);
     }
   }, [state.visible]);
-  let rightSectionClasses;
-  if (state.visible) {
-    rightSectionClasses = `${classes.home__right}`;
-  } else {
-    rightSectionClasses = `${classes.home__right__full}`;
-  }
 
   const barChartExpandHandler = (event) => {
     event.preventDefault();
-    rightSectionClasses = `${classes.home__right__full}`;
     setBarChartExpandProp((prevProp) => !prevProp);
     if (state.visible) {
       dispatch({ type: "visible", value: !state.visible });
@@ -43,7 +36,6 @@ const ChartBox = (props) => {
 
   const doughnutChartExpandHandler = (event) => {
     event.preventDefault();
-    rightSectionClasses = `${classes.home__right__full}`;
     setDoughnutChartExpandProp((prevProp) => !prevProp);
     if (state.visible) {
       dispatch({ type: "visible", value: !state.visible });
@@ -52,7 +44,6 @@ const ChartBox = (props) => {
 
   const lineChartExpandHandler = (event) => {
     event.preventDefault();
-    rightSectionClasses = `${classes.home__right__full}`;
     setLineChartExpandProp((prevProp) => !prevProp);
     if (state.visible) {
       dispatch({ type: "visible", value: !state.visible });
@@ -115,7 +106,7 @@ const ChartBox = (props) => {
               className={classes.home__expandIcon}
             />
           </div>
-          <RangeSlider data={InnovationKPIData.barGraph} />
+          <RangeSlider data={props.data.barGraph} />
         </Card>
 
         <Card expandProp={doughnutChartExpandProp}>
@@ -125,7 +116,7 @@ const ChartBox = (props) => {
               className={classes.home__expandIcon}
             />
           </div>
-          <DoughnutChart data={InnovationKPIData.doughnutGraph} />
+          <DoughnutChart data={props.data.doughnutGraph} />
         </Card>
 
         <Card expandProp={lineChartExpandProp}>
@@ -135,7 +126,7 @@ const ChartBox = (props) => {
               className={classes.home__expandIcon}
             />
           </div>
-          <LineChart data={InnovationKPIData.LineGraph} />
+          <LineChart data={props.data.LineGraph} />
         </Card>
       </div>
     </div>

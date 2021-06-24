@@ -15,19 +15,19 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import ChartBox from "../Charts/ChartBox/ChartBox";
 
 const Home = () => {
-  const [barChartExpandProp, setBarChartExpandProp] = useState(false);
-  const [doughnutChartExpandProp, setDoughnutChartExpandProp] = useState(false);
-  const [lineChartExpandProp, setLineChartExpandProp] = useState(false);
+  // const [barChartExpandProp, setBarChartExpandProp] = useState(false);
+  // const [doughnutChartExpandProp, setDoughnutChartExpandProp] = useState(false);
+  // const [lineChartExpandProp, setLineChartExpandProp] = useState(false);
 
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
-  useEffect(() => {
-    if (state.visible) {
-      setBarChartExpandProp(false);
-      setDoughnutChartExpandProp(false);
-      setLineChartExpandProp(false);
-    }
-  }, [state.visible]);
+  // useEffect(() => {
+  //   if (state.visible) {
+  //     setBarChartExpandProp(false);
+  //     setDoughnutChartExpandProp(false);
+  //     setLineChartExpandProp(false);
+  //   }
+  // }, [state.visible]);
   let rightSectionClasses;
   if (state.visible) {
     rightSectionClasses = `${classes.home__right}`;
@@ -45,7 +45,7 @@ const Home = () => {
       {state.visible && leftSection}
 
       <div className={rightSectionClasses}>
-        <ChartBox />
+        <ChartBox data={InnovationKPIData} />
       </div>
     </div>
   );
