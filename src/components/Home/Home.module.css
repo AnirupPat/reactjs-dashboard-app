@@ -50,3 +50,12 @@
   justify-content: flex-end;
   margin: 5px;
 }
+
+.home__numberCard__title {
+  color: white;
+}
+
+.home__numberCard__number {
+  margin-top: 10px !important;
+  margin-bottom: 10px !important;
+}
