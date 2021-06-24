@@ -8,7 +8,7 @@ class RangeSlider extends React.Component {
   constructor(props) {
     super(props);
 
-    const sortedData = props.data.prices.slice().sort((a, b) => a - b);
+    const sortedData = props.data.data.slice().sort((a, b) => a - b);
     const range = [sortedData[0], sortedData[sortedData.length - 1]];
 
     this.state = {
@@ -29,7 +29,7 @@ class RangeSlider extends React.Component {
           <div>
             <BarChart
               labels={this.props.data.lables}
-              data={this.props.data.prices}
+              data={this.props.data.data}
               highlight={update}
               domain={domain}
               title={this.props.data.title}
