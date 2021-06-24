@@ -10,7 +10,6 @@ import LineChart from "../Charts/LineChart/LineChart";
 import CountUp from "react-countup";
 import { CardContent, Typography, Grid } from "@material-ui/core";
 import NumberCard from "../UI/NumberCard/NumberCard";
-import LineChartData from "../../utils/LineChartData";
 import { useDispatch, useSelector } from "react-redux";
 import InnovationKPIData from "../../utils/InnovationKPIData";
 
@@ -172,7 +171,7 @@ const Home = () => {
               className={classes.home__expandIcon}
             />
           </div>
-          <LineChart data={LineChartData} />
+          <LineChart data={InnovationKPIData.LineGraph} />
         </Card>
       </div>
     </div>
