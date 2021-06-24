@@ -4,7 +4,6 @@ import { Bar } from "react-chartjs-2";
 class BarChart extends React.Component {
   render() {
     const { data, highlight, domain, labels, title } = this.props;
-    // console.log(this.props);
     // calculate frequency of data
     var counts = {};
     for (var i = 0; i < data.length; i++)
@@ -15,9 +14,6 @@ class BarChart extends React.Component {
     for (let i = 0; i < domain[1]; i++) {
       barDataValues.push(counts[i] || 0);
     }
-    console.log("----------");
-    console.log(data);
-    console.log(highlight);
     const barData = {
       labels,
       // barDataValues.map((val, i) => i),

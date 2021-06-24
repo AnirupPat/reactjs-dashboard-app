@@ -2,7 +2,6 @@ import React from "react";
 import { Line } from "react-chartjs-2";
 
 const LineChart = (props) => {
-  console.log(props.data);
   const data = {
     labels: props.data.labels,
     datasets: [
