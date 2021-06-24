@@ -43,6 +43,10 @@ let InnovationKPIData = {
     ],
     prices: [45, 27, 12, 39, 70, 12, 24, 9, 20, 31, 22, 28],
   },
+  doughnutGraph: {
+    labels: ["Approved", "Implemented", "On Hold"],
+    data: [118, 50, 171],
+  },
 };
 
 export default InnovationKPIData;

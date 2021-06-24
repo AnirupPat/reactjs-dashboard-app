@@ -36,18 +36,7 @@ const pieOptions = {
     },
   },
 };
-const data = {
-  maintainAspectRatio: false,
-  responsive: false,
-  labels: ["a", "b", "c", "d"],
-  datasets: [
-    {
-      data: [300, 50, 100, 50],
-      backgroundColor: chartColors,
-      hoverBackgroundColor: chartColors,
-    },
-  ],
-};
+
 const pieData = {
   maintainAspectRatio: false,
   responsive: false,
@@ -61,26 +50,38 @@ const pieData = {
   ],
 };
 
-const DoughnutChart = () => {
+const DoughnutChart = (props) => {
   let chartInstance = null;
+  let data = {
+    maintainAspectRatio: false,
+    responsive: false,
+    labels: props.data.labels,
+    datasets: [
+      {
+        data: props.data.data,
+        backgroundColor: chartColors,
+        hoverBackgroundColor: chartColors,
+      },
+    ],
+  };
   return (
     <div style={styles.centered}>
       <div style={styles.relative}>
         <Doughnut data={data} options={options} />
-        <div style={styles.pieContainer}>
-          <Pie
-            data={data}
-            options={pieOptions}
-            ref={(input) => {
-              chartInstance = input;
-            }}
-          />
-        </div>
+        <div style={styles.pieContainer}></div>
         <div id="legend" />
       </div>
     </div>
   );
 };
+
+// <Pie
+//   data={data}
+//   options={pieOptions}
+//   ref={(input) => {
+//     chartInstance = input;
+//   }}
+// />;
 
 const styles = {
   pieContainer: {

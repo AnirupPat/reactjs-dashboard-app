@@ -162,7 +162,7 @@ const Home = () => {
               className={classes.home__expandIcon}
             />
           </div>
-          <DoughnutChart />
+          <DoughnutChart data={InnovationKPIData.doughnutGraph} />
         </Card>
 
         <Card expandProp={lineChartExpandProp}>
