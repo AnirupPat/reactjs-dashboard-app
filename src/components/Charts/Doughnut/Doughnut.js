@@ -20,7 +20,6 @@ const pieOptions = {
     position: "right",
     legendCallback: function (chart) {
       // Return the HTML string here.
-      console.log(chart);
       return [
         <ul>
           <li>z</li>

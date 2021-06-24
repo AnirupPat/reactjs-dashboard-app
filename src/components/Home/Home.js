@@ -21,7 +21,6 @@ const Home = () => {
 
   const dispatch = useDispatch();
   const state = useSelector((state) => state);
-  console.log(state.selectedKPI);
   useEffect(() => {
     if (state.visible) {
       setBarChartExpandProp(false);
@@ -68,6 +67,8 @@ const Home = () => {
     }
   };
 
+  console.log(prices);
+
   let firstQuaterData = {
     labels: ["", "", "", ""],
     datasets: [
@@ -100,26 +101,43 @@ const Home = () => {
       {state.visible && leftSection}
 
       <div className={rightSectionClasses}>
-        {InnovationKPIData.map((data) => (
+        {InnovationKPIData.numberCard.map((data) => (
           <NumberCard>
             <div>
               <span className={classes.home__numberCard__title}>
                 {data.title}
               </span>
             </div>
-            <Typography
-              variant="h5"
-              component="h2"
-              className={classes.home__numberCard__number}
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+              }}
             >
-              <CountUp
-                style={{ color: "white" }}
-                start={0}
-                end={data.number}
-                duration={2.75}
-                separator=","
-              />
-            </Typography>
+              <span
+                style={{
+                  color: "white",
+                  marginTop: "15px",
+                  marginRight: "5px",
+                }}
+              >
+                {data.unit}
+              </span>
+              <Typography
+                variant="h5"
+                component="h2"
+                className={classes.home__numberCard__number}
+              >
+                <CountUp
+                  style={{ color: "white" }}
+                  start={0}
+                  end={data.number}
+                  duration={2.75}
+                  separator=","
+                />
+              </Typography>
+            </div>
             <LineChart
               style={{ width: "200px", height: "100px" }}
               data={firstQuaterData}
@@ -134,7 +152,7 @@ const Home = () => {
               className={classes.home__expandIcon}
             />
           </div>
-          <RangeSlider data={prices} />
+          <RangeSlider data={InnovationKPIData.barGraph} />
         </Card>
 
         <Card expandProp={doughnutChartExpandProp}>
@@ -155,12 +173,6 @@ const Home = () => {
             />
           </div>
           <LineChart data={LineChartData} />
-        </Card>
-        <Card>
-          <div className={classes.home__card__div}>
-            <SettingsOverscanIcon className={classes.home__expandIcon} />
-          </div>
-          <RangeSlider data={prices2} />
         </Card>
       </div>
     </div>

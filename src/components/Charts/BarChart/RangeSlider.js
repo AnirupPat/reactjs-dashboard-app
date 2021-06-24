@@ -8,7 +8,7 @@ class RangeSlider extends React.Component {
   constructor(props) {
     super(props);
 
-    const sortedData = props.data.slice().sort((a, b) => a - b);
+    const sortedData = props.data.prices.slice().sort((a, b) => a - b);
     const range = [sortedData[0], sortedData[sortedData.length - 1]];
 
     this.state = {
@@ -21,13 +21,15 @@ class RangeSlider extends React.Component {
 
   render() {
     const { domain, values, update, inputValues } = this.state;
+
     // style={{ margin: "10%", height: 120, width: "80%" }}
     return (
       <Grid container>
         <Grid item xs={12}>
           <div>
             <BarChart
-              data={this.props.data}
+              labels={this.props.data.lables}
+              data={this.props.data.prices}
               highlight={update}
               domain={domain}
             />
@@ -76,11 +78,16 @@ class RangeSlider extends React.Component {
                   </div>
                 )}
               </Tracks>
-              <Ticks count={5}>
+              <Ticks count={9}>
                 {({ ticks }) => (
-                  <div className="slider-ticks">
+                  <div className="slider-ticks" style={{ color: "white" }}>
                     {ticks.map((tick) => (
-                      <MuiTick key={tick.id} tick={tick} count={ticks.length} />
+                      <MuiTick
+                        style={{ color: "white" }}
+                        key={tick.id}
+                        tick={tick}
+                        count={ticks.length}
+                      />
                     ))}
                   </div>
                 )}

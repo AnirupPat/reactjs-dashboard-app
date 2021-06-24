@@ -1,7 +1,6 @@
 import classes from "./Card.module.css";
 
 const Card = (props) => {
-  console.log(props.expandProp);
   const wrapperClass = props.expandProp
     ? `${classes.card__expand}`
     : `${classes.card}`;
