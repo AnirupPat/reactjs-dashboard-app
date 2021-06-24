@@ -1,3 +1,23 @@
+.chartBox {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80%; */
+  width: 100%;
+}
+
+.numberBox {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.charts {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
 .home {
   width: 100%;
   display: flex;
@@ -16,17 +36,13 @@
   .home__left {
     width: 100% !important;
   }
-  .home__right {
-    width: 100% !important;
-    display: none !important;
-  }
 }
 
 .home__right {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  width: 80%;
+  width: 100%;
   /* height: 100vh; */
   border: 1px solid black;
   padding: 10px 10px;
@@ -45,21 +61,21 @@
   justify-content: center;
 }
 
-/* .home__expandIcon {
+.home__expandIcon {
   color: white;
 }
 
 .home__card__div {
   display: flex;
   justify-content: flex-end;
-  margin: 5px; 
-}*/
+  margin: 5px;
+}
 
-/* .home__numberCard__title {
+.home__numberCard__title {
   color: white;
 }
 
 .home__numberCard__number {
   margin-top: 10px !important;
   margin-bottom: 10px !important;
-} */
+}
