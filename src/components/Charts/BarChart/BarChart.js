@@ -3,7 +3,7 @@ import { Bar } from "react-chartjs-2";
 
 class BarChart extends React.Component {
   render() {
-    const { data, highlight, domain, labels } = this.props;
+    const { data, highlight, domain, labels, title } = this.props;
     // console.log(this.props);
     // calculate frequency of data
     var counts = {};
@@ -29,6 +29,7 @@ class BarChart extends React.Component {
               : "rgba(255, 99, 132, 0.2)"
           ),
           hoverBackgroundColor: "rgba(255,99,132,0.4)",
+          label: title,
           data: data,
           // barDataValues,
         },

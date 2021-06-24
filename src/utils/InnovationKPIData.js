@@ -1,23 +1,22 @@
-// let prices = [];
-// for (let i = 0; i < 500; i++) {
-//   prices.push(Math.floor(Math.random() * 80) + 1);
-// }
+let totCount = 0;
+let data = [45, 27, 12, 39, 70, 12, 24, 9, 20, 31, 22, 28];
+data.forEach((val) => (totCount += val));
 
 let InnovationKPIData = {
   numberCard: [
     {
       title: "Ideas",
-      number: "5689",
+      number: totCount,
       unit: "",
     },
     {
       title: "Approved Ideas",
-      number: "2040",
+      number: Math.floor(totCount * 0.35),
       unit: "",
     },
     {
       title: "Ideas Implemented",
-      number: "45",
+      number: Math.floor(totCount * 0.15),
       unit: "",
     },
     {
@@ -27,6 +26,7 @@ let InnovationKPIData = {
     },
   ],
   barGraph: {
+    title: "Ideas",
     lables: [
       "Jan",
       "Feb",

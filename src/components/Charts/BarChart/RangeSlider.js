@@ -32,6 +32,7 @@ class RangeSlider extends React.Component {
               data={this.props.data.prices}
               highlight={update}
               domain={domain}
+              title={this.props.data.title}
             />
             <Slider
               mode={3}
