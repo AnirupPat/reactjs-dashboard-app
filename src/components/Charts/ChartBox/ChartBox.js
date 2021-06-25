@@ -53,8 +53,8 @@ const ChartBox = (props) => {
   return (
     <div className={classes.chartBox}>
       <div className={classes.numberBox}>
-        {InnovationKPIData.numberCard.map((data) => (
-          <NumberCard>
+        {props.data.numberCard.map((data) => (
+          <NumberCard key={data.title}>
             <div>
               <span className={classes.home__numberCard__title}>
                 {data.title}

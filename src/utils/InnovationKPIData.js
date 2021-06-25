@@ -6,7 +6,7 @@ let InnovationKPIData = {
   numberCard: [
     {
       title: "Ideas",
-      number: totCount,
+      number: +totCount,
       unit: "",
       lineData: {
         title: "",
@@ -75,7 +75,7 @@ let InnovationKPIData = {
     },
     {
       title: "Revene Generated",
-      number: "11200",
+      number: 11200,
       unit: "$",
       lineData: {
         title: "",
