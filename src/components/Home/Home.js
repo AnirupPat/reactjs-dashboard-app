@@ -5,6 +5,9 @@ import { useSelector } from "react-redux";
 import InnovationKPIData from "../../utils/InnovationKPIData";
 import ChartBox from "../Charts/ChartBox/ChartBox";
 import IARevenues from "../../utils/IARevenues";
+import SettingsIcon from "@material-ui/icons/Settings";
+import BuildIcon from "@material-ui/icons/Build";
+import GavelIcon from "@material-ui/icons/Gavel";
 
 const Home = () => {
   const [dashboardData, setDashboardData] = useState("");
@@ -37,7 +40,30 @@ const Home = () => {
       <SideNav />
     </div>
   );
-  // let dashboardData = "";
+
+  const blankScreen = (
+    <div className={classes.mainBlank}>
+      <div className={classes.header__companyTag}>
+        <span className={classes.mainLogo}>Accenture</span>
+        <span className={classes.tagText}>High Performance Delivered.</span>
+      </div>
+
+      <div className={classes.blankScreen}>
+        <div className={classes.blankScreen_firstDiv}>
+          <SettingsIcon className={classes.blankScreen__small_icon} />
+        </div>
+
+        <div className={classes.blankScreen_secondDiv}>
+          <SettingsIcon className={classes.blankScreen__small_icon} />
+          <BuildIcon className={classes.blankScreen__small_icon} />
+        </div>
+      </div>
+
+      <div className={classes.header__companyTag}>
+        <span className={classes.tagText}>A 360° View Platform </span>
+      </div>
+    </div>
+  );
 
   return (
     <div className={classes.home}>
@@ -45,6 +71,7 @@ const Home = () => {
 
       <div className={rightSectionClasses}>
         {dashboardData && <ChartBox data={dashboardData} />}
+        {!dashboardData && blankScreen}
       </div>
     </div>
   );

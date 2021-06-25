@@ -45,21 +45,88 @@
   justify-content: center;
 }
 
-/* .home__expandIcon {
-  color: white;
-}
-
-.home__card__div {
+.mainBlank {
   display: flex;
-  justify-content: flex-end;
-  margin: 5px; 
-}*/
-
-/* .home__numberCard__title {
-  color: white;
+  flex-direction: column;
+  justify-content: end;
+  width: 100%;
 }
 
-.home__numberCard__number {
-  margin-top: 10px !important;
-  margin-bottom: 10px !important;
+.blankScreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.blankScreen_firstDiv {
+  justify-content: center;
+  display: flex;
+}
+
+/* .blankScreen_secondDiv {
+  
+  
 } */
+
+.blankScreen__large_icon {
+  color: white;
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.blankScreen__mid_icon {
+  color: white;
+  width: 150px !important;
+  height: 150px !important;
+}
+
+.blankScreen__small_icon {
+  color: white;
+  width: 50px !important;
+  height: 50px !important;
+  /* margin-left: 20%;
+  margin-bottom: 40%; */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .blankScreen {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.header__companyTag {
+  display: flex;
+  flex-direction: column;
+}
+
+.header__icon {
+  color: white;
+  width: 25% !important;
+  height: 40px !important;
+  padding-top: 10px;
+  cursor: pointer;
+}
+
+.mainLogo {
+  color: white;
+  font-size: 100px;
+  font-family: emoji;
+}
+
+.tagText {
+  color: white;
+  font-size: 50px;
+  margin-bottom: 5px;
+}

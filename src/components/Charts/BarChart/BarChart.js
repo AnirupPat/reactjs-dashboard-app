@@ -19,10 +19,11 @@ class BarChart extends React.Component {
       // barDataValues.map((val, i) => i),
       datasets: [
         {
-          backgroundColor: data.map((val, i) =>
-            i >= highlight[0] / 5 - 2 && i + 1 <= highlight[1] / 5 - 2
-              ? "rgba(135, 206, 235, 1)"
-              : "rgba(255, 99, 132, 0.2)"
+          backgroundColor: data.map(
+            (val, i) =>
+              i >= highlight[0] / 5 - 2 && i + 1 <= highlight[1] / 5 - 2
+                ? "rgba(135, 206, 235, 1)"
+                : "rgba(135, 206, 235, 1)" //"rgba(255, 99, 132, 0.2)"
           ),
           hoverBackgroundColor: "rgba(255,99,132,0.4)",
           label: title,
