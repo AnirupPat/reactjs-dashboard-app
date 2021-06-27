@@ -8,9 +8,12 @@ import IARevenues from "../../utils/IARevenues";
 import SettingsIcon from "@material-ui/icons/Settings";
 import BuildIcon from "@material-ui/icons/Build";
 import GavelIcon from "@material-ui/icons/Gavel";
+import { OutTable, ExcelRenderer } from "react-excel-renderer";
 
 const Home = () => {
   const [dashboardData, setDashboardData] = useState("");
+  const [tableRows, setTableRows] = useState([]);
+  const [tableCols, setTableCols] = useState([]);
   const state = useSelector((state) => state);
   console.log(state);
 
@@ -29,6 +32,21 @@ const Home = () => {
     } else setDashboardData("");
   }, [state.selectedKPI]);
 
+  const fileHandler = (event) => {
+    let fileObj = event.target.files[0];
+
+    //just pass the fileObj as parameter
+    ExcelRenderer(fileObj, (err, resp) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.log(resp);
+        setTableRows(resp.rows);
+        setTableCols(resp.cols);
+      }
+    });
+  };
+
   let rightSectionClasses;
   if (state.visible) {
     rightSectionClasses = `${classes.home__right}`;
@@ -40,6 +58,13 @@ const Home = () => {
       <SideNav />
     </div>
   );
+  // <input type="file" onChange={fileHandler} style={{ padding: "10px" }} />
+  //     <OutTable
+  //       data={tableRows}
+  //       columns={tableCols}
+  //       tableClassName="ExcelTable2007"
+  //       tableHeaderRowClass="heading"
+  //     />
 
   const blankScreen = (
     <div className={classes.mainBlank}>
