@@ -20,6 +20,9 @@
     width: 100% !important;
     display: none !important;
   }
+  .home__right__full {
+    padding: 0px !important;
+  }
 }
 
 .home__right {

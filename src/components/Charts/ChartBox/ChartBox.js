@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import classes from "./ChartBox.module.css";
+import classes from "./ChartBox.module.scss";
 import InnovationKPIData from "../../../utils/InnovationKPIData";
 import NumberCard from "../../UI/NumberCard/NumberCard";
 import { Typography } from "@material-ui/core";

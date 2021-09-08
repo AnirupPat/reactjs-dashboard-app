@@ -1,9 +1,12 @@
+@import "../../../utils/globalStyles.scss";
+
 .chartBox {
   /* display: flex;
   flex-wrap: wrap;
   justify-content: center;
   width: 80%; */
   width: 100%;
+  background: $body-background;
 }
 
 .numberBox {
