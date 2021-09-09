@@ -1,5 +1,5 @@
 import React from "react";
-import classes from "./NavigationList.module.css";
+import classes from "./NavigationList.module.scss";
 import AttachMoneyIcon from "@material-ui/icons/AttachMoney";
 import TimelineIcon from "@material-ui/icons/Timeline";
 import CloudIcon from "@material-ui/icons/Cloud";

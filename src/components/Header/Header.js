@@ -18,8 +18,8 @@ const Header = () => {
           onClick={iconHandler}
         />
         <div className={classes.header__companyTag}>
-          <span className={classes.mainLogo}>Accenture</span>
-          <span className={classes.tagText}>High Performance Delivered.</span>
+          <span className={classes.mainLogo}>accenture</span>
+          <span className={classes.tagText}>High Performance. Delivered.</span>
         </div>
       </div>
 

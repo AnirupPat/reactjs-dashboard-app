@@ -9,7 +9,7 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import BuildIcon from "@material-ui/icons/Build";
 import GavelIcon from "@material-ui/icons/Gavel";
 import { OutTable, ExcelRenderer } from "react-excel-renderer";
-
+import Acc from "../../assets/accenture-logo-only.jpeg";
 const Home = () => {
   const [dashboardData, setDashboardData] = useState("");
   const [tableRows, setTableRows] = useState([]);
@@ -69,8 +69,12 @@ const Home = () => {
   const blankScreen = (
     <div className={classes.mainBlank}>
       <div className={classes.header__companyTag}>
-        <span className={classes.mainLogo}>Accenture</span>
-        <span className={classes.tagText}>High Performance Delivered.</span>
+        <div className={classes.mainLogo__div}>
+          <img src={Acc} alt="Logo" className={classes.acc__logo} />
+          <span className={classes.mainLogo}>accenture</span>
+        </div>
+
+        <span className={classes.tagText}>High Performance. Delivered.</span>
       </div>
 
       <div className={classes.blankScreen}>
