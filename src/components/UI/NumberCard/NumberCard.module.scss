@@ -16,6 +16,13 @@
 @media (max-width: 500px) {
   .numberCard {
     width: 300px;
-    height: 200px;
+    height: 220px;
+  }
+}
+
+@media (min-width: 501px) and (max-width: 768px) {
+  .numberCard {
+    width: 300px;
+    height: 240px;
   }
 }

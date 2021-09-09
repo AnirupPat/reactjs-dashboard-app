@@ -1,6 +1,6 @@
 import React from "react";
 import { chartColors } from "./Colors";
-import { Doughnut, Pie } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 import "./Styles.css";
 
 const options = {
@@ -14,44 +14,44 @@ const options = {
     },
   },
 };
-const pieOptions = {
-  legend: {
-    display: false,
-    position: "right",
-    legendCallback: function (chart) {
-      // Return the HTML string here.
-      return [
-        <ul>
-          <li>z</li>
-          <li>zzzz</li>
-          <li>ppp</li>
-          <li>adasda</li>
-        </ul>,
-      ];
-    },
-  },
-  elements: {
-    arc: {
-      borderWidth: 0,
-    },
-  },
-};
+// const pieOptions = {
+//   legend: {
+//     display: false,
+//     position: "right",
+//     legendCallback: function (chart) {
+//       // Return the HTML string here.
+//       return [
+//         <ul>
+//           <li>z</li>
+//           <li>zzzz</li>
+//           <li>ppp</li>
+//           <li>adasda</li>
+//         </ul>,
+//       ];
+//     },
+//   },
+//   elements: {
+//     arc: {
+//       borderWidth: 0,
+//     },
+//   },
+// };
 
-const pieData = {
-  maintainAspectRatio: false,
-  responsive: false,
-  labels: ["usa", "europe", "africa"],
-  datasets: [
-    {
-      data: [200, 150, 20, 10],
-      backgroundColor: chartColors,
-      hoverBackgroundColor: chartColors,
-    },
-  ],
-};
+// const pieData = {
+//   maintainAspectRatio: false,
+//   responsive: false,
+//   labels: ["usa", "europe", "africa"],
+//   datasets: [
+//     {
+//       data: [200, 150, 20, 10],
+//       backgroundColor: chartColors,
+//       hoverBackgroundColor: chartColors,
+//     },
+//   ],
+// };
 
 const DoughnutChart = (props) => {
-  let chartInstance = null;
+  // let chartInstance = null;
   let data = {
     maintainAspectRatio: false,
     responsive: false,

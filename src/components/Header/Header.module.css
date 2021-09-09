@@ -41,7 +41,8 @@
 .mainLogo {
   color: white;
   font-size: 25px;
-  font-family: cursive;
+  font-family: emoji;
+  font-weight: bold;
 }
 
 .tagText {

@@ -51,7 +51,7 @@
 .mainBlank {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  justify-content: flex-end;
   width: 100%;
 }
 
@@ -126,6 +126,15 @@
   color: black;
   font-size: 100px;
   font-family: emoji;
+}
+
+@media (max-width: 500px) {
+  .mainLogo {
+    font-size: 50px !important;
+  }
+  .tagText {
+    font-size: 25px !important;
+  }
 }
 
 .tagText {

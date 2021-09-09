@@ -20,7 +20,7 @@ class RangeSlider extends React.Component {
   }
 
   render() {
-    const { domain, values, update, inputValues } = this.state;
+    const { domain, values, update } = this.state;
 
     // style={{ margin: "10%", height: 120, width: "80%" }}
     return (

@@ -7,15 +7,14 @@ import ChartBox from "../Charts/ChartBox/ChartBox";
 import IARevenues from "../../utils/IARevenues";
 import SettingsIcon from "@material-ui/icons/Settings";
 import BuildIcon from "@material-ui/icons/Build";
-import GavelIcon from "@material-ui/icons/Gavel";
-import { OutTable, ExcelRenderer } from "react-excel-renderer";
+// import GavelIcon from "@material-ui/icons/Gavel";
+// import { ExcelRenderer } from "react-excel-renderer";
 import Acc from "../../assets/accenture-logo-only.jpeg";
 const Home = () => {
   const [dashboardData, setDashboardData] = useState("");
-  const [tableRows, setTableRows] = useState([]);
-  const [tableCols, setTableCols] = useState([]);
+  // const [setTableRows] = useState([]);
+  // const [setTableCols] = useState([]);
   const state = useSelector((state) => state);
-  console.log(state);
 
   useEffect(() => {
     if (
@@ -27,25 +26,24 @@ const Home = () => {
       state.selectedKPI.heading === "INTELLIGENT AUTOMATION" &&
       state.selectedKPI.subHeading === "Revenues"
     ) {
-      console.log(IARevenues);
       setDashboardData(IARevenues);
     } else setDashboardData("");
   }, [state.selectedKPI]);
 
-  const fileHandler = (event) => {
-    let fileObj = event.target.files[0];
+  // const fileHandler = (event) => {
+  //   let fileObj = event.target.files[0];
 
-    //just pass the fileObj as parameter
-    ExcelRenderer(fileObj, (err, resp) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log(resp);
-        setTableRows(resp.rows);
-        setTableCols(resp.cols);
-      }
-    });
-  };
+  //   //just pass the fileObj as parameter
+  //   ExcelRenderer(fileObj, (err, resp) => {
+  //     if (err) {
+  //       console.log(err);
+  //     } else {
+  //       console.log(resp);
+  //       setTableRows(resp.rows);
+  //       setTableCols(resp.cols);
+  //     }
+  //   });
+  // };
 
   let rightSectionClasses;
   if (state.visible) {
