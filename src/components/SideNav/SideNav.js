@@ -2,9 +2,9 @@ import classes from "./SideNav.module.css";
 import NavigationList from "../NavigationList/NavigationList";
 
 import React from "react";
-const SAP_FIORI = "SAP FIORI";
-const SAP_IA = "INTELLIGENT AUTOMATION";
-const SAP_ABAP = "SAP ABAP";
+const SAP_FIORI = "INSURANCE";
+const SAP_IA = "FINANCE";
+const SAP_ABAP = "SECURITIES LICENSING";
 const EXTRAS = "EXTRAS";
 const SideNav = () => {
   return (

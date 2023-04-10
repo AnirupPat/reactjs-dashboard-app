@@ -18,13 +18,17 @@ const Header = () => {
           onClick={iconHandler}
         />
         <div className={classes.header__companyTag}>
-          <span className={classes.mainLogo}>accenture</span>
-          <span className={classes.tagText}>High Performance. Delivered.</span>
+          <img
+            alt="Kaplan logo"
+            src="https://kaplan.com/wp-content/themes/kaplan/images/kaplan-logo.png?12345"
+            className={classes.mainLogo}
+          ></img>
+          {/* <span className={classes.tagText}>High Performance. Delivered.</span> */}
         </div>
       </div>
 
       <div className={classes.header__rightSection}>
-        <h2>Workstream Dashboard</h2>
+        <h2>Business Dashboard</h2>
       </div>
     </div>
   );

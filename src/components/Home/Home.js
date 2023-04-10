@@ -23,7 +23,7 @@ const Home = () => {
     ) {
       setDashboardData(InnovationKPIData);
     } else if (
-      state.selectedKPI.heading === "INTELLIGENT AUTOMATION" &&
+      state.selectedKPI.heading === "FINANCE" &&
       state.selectedKPI.subHeading === "Revenues"
     ) {
       setDashboardData(IARevenues);
@@ -68,21 +68,26 @@ const Home = () => {
     <div className={classes.mainBlank}>
       <div className={classes.header__companyTag}>
         <div className={classes.mainLogo__div}>
-          <img src={Acc} alt="Logo" className={classes.acc__logo} />
-          <span className={classes.mainLogo}>accenture</span>
+          {/* <img src={Acc} alt="Logo" className={classes.acc__logo} /> */}
+          <span className={classes.subLogo}>Welcome to</span>
+          <span className={classes.mainLogo}>KAPLAN</span>
         </div>
 
-        <span className={classes.tagText}>High Performance. Delivered.</span>
+        <span className={classes.tagText}>
+          Your edge in a competitive world.
+        </span>
       </div>
 
-      <div className={classes.blankScreen}>
-        <div className={classes.blankScreen_firstDiv}>
-          <SettingsIcon className={classes.blankScreen__small_icon} />
-        </div>
+      <div className={classes.tool}>
+        <div className={classes.blankScreen}>
+          <div className={classes.blankScreen_firstDiv}>
+            <SettingsIcon className={classes.blankScreen__small_icon} />
+          </div>
 
-        <div className={classes.blankScreen_secondDiv}>
-          <SettingsIcon className={classes.blankScreen__small_icon} />
-          <BuildIcon className={classes.blankScreen__small_icon} />
+          <div className={classes.blankScreen_secondDiv}>
+            <SettingsIcon className={classes.blankScreen__small_icon} />
+            <BuildIcon className={classes.blankScreen__small_icon} />
+          </div>
         </div>
       </div>
 
