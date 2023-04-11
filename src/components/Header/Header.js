@@ -20,7 +20,7 @@ const Header = () => {
         <div className={classes.header__companyTag}>
           <img
             alt="Kaplan logo"
-            src="https://kaplan.com/wp-content/themes/kaplan/images/kaplan-logo.png?12345"
+            src="https://images.ctfassets.net/gogvzi849aaj/78tb0StjgReDfzk0KmYgfI/305847839593ea272076625a56f0390f/Kaplan_Logo_Purple_95x32.svg?fm=webp&q=90"
             className={classes.mainLogo}
           ></img>
           {/* <span className={classes.tagText}>High Performance. Delivered.</span> */}
